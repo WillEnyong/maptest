@@ -1,20 +1,5 @@
-// Fungsi untuk tombol login
-document.getElementById('login-btn').addEventListener('click', function(event) {
-    event.preventDefault();  // Mencegah pengiriman form dan memuat ulang halaman
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (email && password) {
-        // Simulasikan login berhasil (untuk saat ini hanya sembunyikan panel login dan tampilkan aplikasi)
-        document.getElementById('login-panel').style.display = 'none';
-        document.getElementById('app').style.display = 'block';
-    } else {
-        alert('Silakan masukkan email dan password');
-    }
-});
-
-// Fungsi untuk mem-fetch data validator (Simulasi)
-const proxyUrl = 'http://194.182.87.85/:3110/api/validators';  // Ganti dengan URL yang sesuai
+// Ganti proxyUrl dengan URL server VPS Anda
+const proxyUrl = 'http://194.182.87.85:3110/';
 
 async function fetchValidators() {
     try {
@@ -26,19 +11,12 @@ async function fetchValidators() {
     }
 }
 
-// Fungsi untuk merender data validator ke UI
 function renderValidators(validators) {
     const validatorContainer = document.getElementById('validator-info');
     validatorContainer.innerHTML = '';
 
     validators.forEach(validator => {
-        const {
-            moniker,
-            operator_address,
-            status,
-            tokens,
-            commission,
-        } = validator;
+        const { moniker, operator_address, status, tokens, commission } = validator;
 
         const validatorElement = document.createElement('div');
         validatorElement.className = 'validator';
@@ -49,9 +27,9 @@ function renderValidators(validators) {
             <p>Status: ${status}</p>
             <p>Tokens: ${tokens}</p>
             <p>Commission Rate: ${commission.commission_rates.rate}</p>
-            <p>Misblocks: 🟩🟩🟩🟩🟩🟩🟩🟩</p> <!-- Simulasi data misblock -->
-            <p>Rank: 1</p> <!-- Bisa diatur berdasarkan kondisi -->
-            <p>Uptime: 99%</p> <!-- Contoh data uptime -->
+            <p>Misblocks: 🟩🟩🟩🟩🟩🟩🟩🟩</p>
+            <p>Rank: 1</p>
+            <p>Uptime: 99%</p>
         `;
 
         validatorContainer.appendChild(validatorElement);
