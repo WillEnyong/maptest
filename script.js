@@ -1,5 +1,20 @@
-// Ubah URL berikut ke URL proxy server Anda
-const proxyUrl = 'http://194.182.87.85/:3110/api/validators';
+// Fungsi untuk tombol login
+document.getElementById('login-btn').addEventListener('click', function(event) {
+    event.preventDefault();  // Mencegah pengiriman form dan memuat ulang halaman
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email && password) {
+        // Simulasikan login berhasil (untuk saat ini hanya sembunyikan panel login dan tampilkan aplikasi)
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+    } else {
+        alert('Silakan masukkan email dan password');
+    }
+});
+
+// Fungsi untuk mem-fetch data validator (Simulasi)
+const proxyUrl = 'http://194.182.87.85/:3110/api/validators';  // Ganti dengan URL yang sesuai
 
 async function fetchValidators() {
     try {
@@ -11,6 +26,7 @@ async function fetchValidators() {
     }
 }
 
+// Fungsi untuk merender data validator ke UI
 function renderValidators(validators) {
     const validatorContainer = document.getElementById('validator-info');
     validatorContainer.innerHTML = '';
