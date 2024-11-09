@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div id="login-panel">
+        <h2>Login</h2>
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div id="app" style="display: none;">
+        <header>
+            <h1>Network Map</h1>
+            <button id="add-worker-btn">Add Worker Node</button>
+        </header>
+        
+        <div id="worker-form" style="display: none;">
+            <input type="text" id="worker-ip" placeholder="IP VPS" required>
+            <input type="text" id="moniker" placeholder="Moniker" required>
+            <input type="text" id="worker-address" placeholder="Address Node" required>
+            <button id="submit-btn">Submit</button>
+            <button id="cancel-btn">Cancel</button>
+            <button id="delete-btn">Delete</button>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
