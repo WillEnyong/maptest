@@ -36,3 +36,28 @@ header {
     flex-direction: column;
     margin-bottom: 10px;
 }
+
+#validator-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.validator {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.validator h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.validator p {
+    margin: 5px 0;
+}
